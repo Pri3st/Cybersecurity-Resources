@@ -1,0 +1,12 @@
+#Install pip for Python2 in Kali
+
+1. curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+2. python2 get-pip.py
+
+#Then, running the following commands should show:
+pip -V  --> pip 20.3.4 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7)
+pip3 -V --> pip 21.0.1 from /usr/local/lib/python3.9/dist-packages/pip (python 3.9)
+
+#To install packages, use the following commands
+pip install "module" --> for Python2
+pip3 install "module" --> for Python3
