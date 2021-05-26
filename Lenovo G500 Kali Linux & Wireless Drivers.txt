@@ -1,0 +1,8 @@
+Lenovo G500 Kali Linux & Wireless Drivers
+
+1) apt-get install broadcom-sta-dkms
+2) apt-get install broadcom-sta-common
+3) apt-get install broadcom-sta-source
+4) apt-get update
+5) apt-get dist-upgrade
+6) system reboot
